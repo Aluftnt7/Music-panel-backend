@@ -50,6 +50,8 @@ async function remove(roomId) {
 }
 
 async function update(songObj, idx) {
+  console.log("inside Update");
+  console.log("inside Update");
   const collection = await dbService.getCollection("rooms");
   try {
     const room = await collection.findOne({ roomIdx: parseInt(idx) });
@@ -63,10 +65,14 @@ async function update(songObj, idx) {
 }
 
 async function updateRoom(room) {
+  console.log("inside Update room (wrong one)");
   const collection = await dbService.getCollection("rooms");
   try {
-    const roomToUpdate = await collection.findOne({ _id: ObjectId(room._id) });
-    // console.log("room", roomToUpdate);
+    const roomToUpdate = await collection.findOne({
+      _id: ObjectId(room._id),
+    });
+    console.log("roomToUpdate%%%%%%%", roomToUpdate);
+    console.log("room!!!!!!!!!", room);
     roomToUpdate.playlist = room.playlist;
     await collection.updateOne(
       { _id: ObjectId(room._id) },

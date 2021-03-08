@@ -17,11 +17,11 @@ async function remove(req, res) {
 }
 
 async function update(req, res) {
-  console.log("WRONG SHIT");
   const { songObj, idx } = req.body;
   await roomService.update(songObj, idx);
   res.json({ songObj, idx });
 }
+
 async function updateRoom(req, res) {
   const room = req.body;
   await roomService.updateRoom(room);

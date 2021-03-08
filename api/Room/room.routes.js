@@ -17,8 +17,8 @@ const router = express.Router();
 // router.get('/', query)
 // router.get('/', requireBeingMember, getById)
 router.get("/", getById);
+router.put("/add-song/:id", update);
 router.put("/:id", updateRoom);
-router.put("/addSong", update);
 // router.put("/", update);
 router.post("/:id/validate", checkIsValidUser);
 router.post("/", add);
