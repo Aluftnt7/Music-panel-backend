@@ -20,9 +20,9 @@ router.get("/", getById);
 router.put("/add-song/:id", update);
 router.put("/:id", updateRoom);
 // router.put("/", update);
-router.post("/:id/validate", checkIsValidUser);
+// router.post("/:id/validate", checkIsValidUser);
 router.post("/", add);
-router.delete("/:id", remove);
+// router.delete("/:id", remove);
 
 module.exports = router;
 
