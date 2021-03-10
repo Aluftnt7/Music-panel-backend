@@ -49,6 +49,10 @@ connectSockets(io);
 app.use("/api/programs", programsRoutes);
 app.use("/api/room", roomRoutes);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
 const logger = require("./services/LoggerService");
 const port = process.env.PORT || 3030;
 http.listen(port, () => {
