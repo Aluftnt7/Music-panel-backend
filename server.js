@@ -46,8 +46,8 @@ if (process.env.NODE_ENV === "production") {
 
 // routes
 connectSockets(io);
-app.use("/api/room", roomRoutes);
 app.use("/api/programs", programsRoutes);
+app.use("/api/room", roomRoutes);
 
 const logger = require("./services/LoggerService");
 const port = process.env.PORT || 3030;
