@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(cors(corsOptions));
 }
 
-// routes
+// routes and souch
 connectSockets(io);
 app.use("/api/programs", programsRoutes);
 app.use("/api/room", roomRoutes);
