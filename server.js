@@ -15,7 +15,7 @@ const io = require("socket.io")(http, {
 });
 
 const programsRoutes = require("./api/programs/programs.routes");
-const roomRoutes = require("./api/room/room.routes");
+// const roomRoutes = require("./api/room/room.routes");
 const connectSockets = require("./api/socket/SockerRoutes");
 
 app.use(cookieParser());
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV === "production") {
 // routes
 connectSockets(io);
 app.use("/api/programs", programsRoutes);
-app.use("/api/room", roomRoutes);
+// app.use("/api/room", roomRoutes);
 
 const logger = require("./services/LoggerService");
 const port = process.env.PORT || 3030;
