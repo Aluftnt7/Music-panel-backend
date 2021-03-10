@@ -49,6 +49,7 @@ connectSockets(io);
 app.use("/api/programs", programsRoutes);
 app.use("/api/room", roomRoutes);
 
+//Fallback route
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
