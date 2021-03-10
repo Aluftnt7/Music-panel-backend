@@ -3,12 +3,6 @@ module.exports = connectSockets;
 function connectSockets(io) {
   io.on("connection", (socket) => {
     socket.on(`volume changed`, ({ idx, inputValue }) => {
-      console.log(
-        "hi from socket routes player number",
-        idx,
-        "the new value is ",
-        inputValue
-      );
       io.emit(`change volume ${idx}`, { newValue: inputValue });
     });
     socket.on(`playing status`, ({ idx, isLocalPlaying }) => {
