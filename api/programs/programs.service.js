@@ -19,7 +19,6 @@ async function query(filterBy = {}) {
       .find(critirea.query)
       .sort(critirea.sortBy)
       .toArray();
-    console.log("PROGRAMS!", programs);
     return programs;
   } catch (err) {
     console.log("ERROR: cannot find programs");
